@@ -2,7 +2,8 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#080810" />
     <title>调酒师手册 · 精选鸡尾酒配方</title>
     <link rel="stylesheet" href="https://static0.xesimg.com/alading-resources/css/all.min.css" />
     <link rel="stylesheet" href="https://static0.xesimg.com/alading-resources/css/tailwind.min.css" />
@@ -30,6 +31,8 @@
 
       html {
         scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
       }
 
       body {
@@ -38,6 +41,8 @@
         font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Noto Sans SC", "Hiragino Sans GB", Simsun, sans-serif;
         min-height: 100vh;
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
 
       ::-webkit-scrollbar {
@@ -1036,7 +1041,7 @@
 
         @media(max-width:640px) {
           body {
-            font-size: 16px;
+            font-size: 15px;
           }
 
           [style*="font-size:15px"],
@@ -1046,6 +1051,171 @@
 
           .section-title {
             font-size: clamp(1.5rem, 7vw, 1.9rem);
+          }
+
+          nav {
+            padding-top: env(safe-area-inset-top);
+          }
+
+          nav > div {
+            padding: 11px 16px !important;
+          }
+
+          nav > div > div:first-child {
+            gap: 9px !important;
+          }
+
+          nav > div > div:first-child > div:first-child {
+            width: 34px !important;
+            height: 34px !important;
+          }
+
+          .max-w-7xl.px-5,
+          .max-w-7xl.px-6 {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+          }
+
+          nav + section {
+            min-height: 420px !important;
+          }
+
+          #cabinet {
+            padding-top: 42px !important;
+            padding-bottom: 42px !important;
+          }
+
+          #spiritTypeGrid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 9px !important;
+          }
+
+          .spirit-card {
+            gap: 5px;
+            padding: 13px 4px 11px;
+            border-width: 1px;
+            border-radius: 13px;
+          }
+
+          .spirit-icon-wrap {
+            width: 42px;
+            height: 42px;
+          }
+
+          .spirit-icon-wrap i {
+            font-size: 18px !important;
+          }
+
+          #spiritTypeGrid .spirit-card [style*="font-size:13px"] {
+            font-size: 13px !important;
+          }
+
+          #spiritTypeGrid .spirit-card [style*="font-size:10px"] {
+            font-size: 10px !important;
+          }
+
+          .addon-category-grid {
+            gap: 9px;
+          }
+
+          .addon-cat-card {
+            gap: 5px;
+            padding: 14px 6px 12px;
+            border-width: 1px;
+            border-radius: 13px;
+          }
+
+          .addon-cat-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            font-size: 17px;
+          }
+
+          .brand-panel,
+          .addon-detail-panel {
+            border-radius: 12px;
+          }
+
+          .brand-panel.open,
+          .addon-detail-panel.open {
+            max-height: 4000px;
+          }
+
+          .brand-group-card,
+          .addon-group-card {
+            padding: 11px 12px;
+            border-width: 1px;
+            border-radius: 10px;
+          }
+
+          .item-tag {
+            padding: 6px 10px;
+            font-size: 12px;
+          }
+
+          #recipes {
+            padding-top: 30px !important;
+          }
+
+          #recipeGrid {
+            gap: 16px !important;
+          }
+
+          .recipe-card {
+            border-radius: 15px;
+          }
+
+          .card-img {
+            height: 168px;
+          }
+
+          .recipe-card-body {
+            padding: 11px 12px 12px !important;
+          }
+
+          .recipe-card-head {
+            margin-bottom: 6px !important;
+          }
+
+          .recipe-card-desc {
+            min-height: 0 !important;
+            margin-bottom: 8px !important;
+            font-size: 13px !important;
+            line-height: 1.55 !important;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+
+          .recipe-card-tags {
+            gap: 4px !important;
+          }
+
+          .recipe-card-tags span,
+          .recipe-card-meta span,
+          .recipe-card-head > div,
+          .recipe-card-head .badge {
+            font-size: 11px !important;
+          }
+
+          .modal-overlay {
+            padding: 10px;
+            align-items: flex-end;
+          }
+
+          .modal-box {
+            max-height: 94vh;
+            border-radius: 18px 18px 10px 10px;
+          }
+
+          #flavor-map {
+            padding-top: 44px !important;
+          }
+
+          footer {
+            padding-bottom: calc(30px + env(safe-area-inset-bottom)) !important;
           }
         }
     </style>
@@ -5541,10 +5711,10 @@
       }
 
       const CUSTOM_RECIPE_IMAGES = {
-        19: 'assets/cocktails/daiquiri.png',
-        52: 'assets/cocktails/grenadine-moscow-mule.png',
-        91: 'assets/cocktails/tommys-margarita.png',
-        93: 'assets/cocktails/mexican-mule.png'
+        19: 'assets/cocktails/daiquiri.webp',
+        52: 'assets/cocktails/grenadine-moscow-mule.webp',
+        91: 'assets/cocktails/tommys-margarita.webp',
+        93: 'assets/cocktails/mexican-mule.webp'
       };
 
       RECIPES.forEach(recipe => {
@@ -6702,19 +6872,19 @@
           <span style="font-size:14px;font-weight:700;color:#fff;line-height:1.2;">${r.name}</span>
         </div>
       </div>
-      <div style="padding:12px 14px 14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:7px;">
+      <div class="recipe-card-body" style="padding:12px 14px 14px;">
+        <div class="recipe-card-head" style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:7px;">
           <div style="font-size:11px;color:var(--text-secondary);">${r.enName}</div>
           <span class="badge badge-technique" style="font-size:9px;padding:2px 7px;white-space:nowrap;"><i class="fas fa-martini-glass-citrus"></i>${r.technique}</span>
         </div>
-        <div style="font-size:13px;color:rgba(240,236,224,.65);line-height:1.6;margin-bottom:10px;min-height:36px;">${r.desc}</div>
+        <div class="recipe-card-desc" style="font-size:13px;color:rgba(240,236,224,.65);line-height:1.6;margin-bottom:10px;min-height:36px;">${r.desc}</div>
         <div style="height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.2;margin-bottom:8px;"></div>
-        <div class="flex flex-wrap gap-1 mb-2">
+        <div class="recipe-card-tags flex flex-wrap gap-1 mb-2">
           ${spiritLabels.map(t=>`<span style="font-size:10px;padding:2px 6px;background:${t?.color}18;border:1px solid ${t?.color}33;border-radius:4px;color:${t?.color||'var(--gold-light)'};">${t?.name||''}</span>`).join('')}
           ${addonLabels.map(a=>a.shortName?`<span style="font-size:10px;padding:2px 6px;background:${a.color}12;border:1px solid ${a.color}28;border-radius:4px;color:${a.color};">${a.shortName}</span>`:'').join('')}
           ${r.addons.length>3?`<span style="font-size:10px;padding:2px 6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:4px;color:var(--text-secondary);">+${r.addons.length-3}</span>`:''}
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="recipe-card-meta" style="display:flex;justify-content:space-between;align-items:center;">
           <span style="font-size:11px;color:var(--text-secondary);"><i class="fas fa-tint mr-1" style="color:var(--gold);"></i>${r.taste}</span>
           <span style="font-size:11px;color:var(--text-secondary);">ABV ${r.abv}</span>
         </div>
