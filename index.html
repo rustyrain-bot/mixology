@@ -1159,30 +1159,57 @@
           }
 
           #recipeGrid {
-            gap: 16px !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 10px !important;
           }
 
           .recipe-card {
-            border-radius: 15px;
+            border-radius: 13px;
+            min-width: 0;
           }
 
           .card-img {
-            height: 168px;
+            height: 118px;
+          }
+
+          .card-img > div:last-child {
+            left: 10px !important;
+            right: 10px !important;
+            bottom: 8px !important;
+          }
+
+          .card-img > div:last-child span {
+            font-size: 13px !important;
           }
 
           .recipe-card-body {
-            padding: 11px 12px 12px !important;
+            padding: 9px 10px 10px !important;
           }
 
           .recipe-card-head {
+            align-items: flex-start !important;
+            flex-direction: column;
+            gap: 4px !important;
             margin-bottom: 6px !important;
+          }
+
+          .recipe-card-head > div {
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          .recipe-card-head .badge {
+            max-width: 100%;
+            padding: 2px 6px !important;
           }
 
           .recipe-card-desc {
             min-height: 0 !important;
-            margin-bottom: 8px !important;
-            font-size: 13px !important;
-            line-height: 1.55 !important;
+            margin-bottom: 7px !important;
+            font-size: 12px !important;
+            line-height: 1.45 !important;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
@@ -1190,14 +1217,35 @@
           }
 
           .recipe-card-tags {
-            gap: 4px !important;
+            gap: 3px !important;
+            margin-bottom: 7px !important;
           }
 
-          .recipe-card-tags span,
+          .recipe-card-tags span {
+            padding: 2px 5px !important;
+            font-size: 10px !important;
+          }
+
+          .recipe-card-tags span:nth-child(n+4) {
+            display: none !important;
+          }
+
+          .recipe-card-meta {
+            gap: 5px;
+            min-width: 0;
+          }
+
+          .recipe-card-meta span:first-child {
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
           .recipe-card-meta span,
           .recipe-card-head > div,
           .recipe-card-head .badge {
-            font-size: 11px !important;
+            font-size: 10px !important;
           }
 
           .modal-overlay {
