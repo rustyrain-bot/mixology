@@ -506,6 +506,19 @@
         cursor: pointer;
         transition: all .35s cubic-bezier(.4, 0, .2, 1);
         position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .recipe-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .recipe-card-meta {
+        margin-top: auto;
       }
 
       .recipe-card:hover {
@@ -582,6 +595,21 @@
         color: #c7d2fe;
         border: 1px solid rgba(129, 140, 248, .28);
         letter-spacing: .25px;
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .badge-technique > i {
+        flex: 0 0 auto;
+      }
+
+      .badge-technique .technique-text {
+        display: block;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       /* Tabs search */
@@ -1201,6 +1229,7 @@
           }
 
           .recipe-card-head .badge {
+            align-self: stretch;
             max-width: 100%;
             padding: 2px 6px !important;
           }
@@ -6923,7 +6952,7 @@
       <div class="recipe-card-body" style="padding:12px 14px 14px;">
         <div class="recipe-card-head" style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:7px;">
           <div style="font-size:11px;color:var(--text-secondary);">${r.enName}</div>
-          <span class="badge badge-technique" style="font-size:9px;padding:2px 7px;white-space:nowrap;"><i class="fas fa-martini-glass-citrus"></i>${r.technique}</span>
+          <span class="badge badge-technique" style="font-size:9px;padding:2px 7px;white-space:nowrap;"><i class="fas fa-martini-glass-citrus"></i><span class="technique-text">${r.technique}</span></span>
         </div>
         <div class="recipe-card-desc" style="font-size:13px;color:rgba(240,236,224,.65);line-height:1.6;margin-bottom:10px;min-height:36px;">${r.desc}</div>
         <div style="height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.2;margin-bottom:8px;"></div>
